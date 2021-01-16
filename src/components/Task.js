@@ -1,17 +1,17 @@
 import React from "react";
 
-function Task( { task } ) {
-  // console.log("Task Cats", task)
-
-  const removeTask = (e) => {
-    console.log("Remove Task", e)
+function Task( { task, removeTask } ) {
+ 
+  function deleteTask(e) {
+    console.log("Task Cats", task)
+    removeTask(task)
   }
 
   return (
     <div className="task">
-      <div className="label">{task.category}</div>
       <div className="text">{task.text}</div>
-      <button onClick={removeTask} className="delete">X Be Gone X</button>
+      <div className="label">{task.category}</div>
+      <button onClick={deleteTask} className="delete">Remove Task</button>
     </div>
   );
 }
